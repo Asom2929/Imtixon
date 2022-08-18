@@ -1,0 +1,125 @@
+.hero {
+  margin-top: 20px;
+  padding-bottom: 150px;
+  background-image: url("/img/hero-img.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("/img/hero-bef.svg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 20px;
+    left: -50px;
+    bottom: 250px;
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("/img/hero-aft.svg");
+    background-repeat: no-repeat;
+    width: 460px;
+    height: 150px;
+    right: 150px;
+    bottom: 130px;
+  }
+}
+
+.hero__title {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 56px;
+  letter-spacing: -2.5px;
+  color: #ffffff;
+  max-width: 500px;
+  padding-top: 150px;
+}
+
+.hero__text {
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  color: #ffffff;
+  max-width: 405px;
+  margin-left: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.hero__btn {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  color: #ffffff;
+  padding: 15px 40px;
+  background: #fcb72b;
+  margin-left: 100px;
+  border: 1px solid #fcb72b;
+  &:hover{
+    color: #fcb72b;
+    border: 1px solid #fcb72b;
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    background-size: auto;
+    background-position: right;
+    margin-top: 50px;
+    &::before {
+      display: none;
+    }
+    &::after {
+      left: -140px;
+      top: 470px;
+    }
+  }
+
+  .hero__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero__text {
+    max-width: 575px;
+    margin: 0 auto;
+  }
+}
+
+.hero__btn {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 375px) {
+  
+    .hero{
+      background-position: bottom right;
+        &::after {
+            left: -320px;
+            top: 500px;
+          }
+    }
+    .hero__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
+    
+  }
+}

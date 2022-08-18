@@ -1,0 +1,88 @@
+.guide {
+  padding-top: 160px;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("/img/guide-bef.png");
+    background-repeat: no-repeat;
+    width: 900px;
+    height: 10px;
+    left: 0;
+    top: 210px;
+    z-index: -1;
+  }
+}
+
+.guide__list {
+  display: flex;
+  justify-content: space-between;
+}
+.guide__item {
+  column-gap: 80px;
+}
+
+.guide__img {
+  padding-bottom: 40px;
+}
+
+.guide__title {
+  padding-bottom: 30px;
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1.07143px;
+  color: #495567;
+}
+
+.guide__text {
+  max-width: 350px;
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  color: #939caa;
+}
+
+@media screen and(max-width: 768px) {
+  .guide {
+    &::before {
+     transform: rotate(90deg);
+      left: -370px;
+      bottom: 0;
+    }
+  }
+
+  .guide__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 75px;
+  }
+
+  .guide__item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and(max-width: 375px) {
+  .guide {
+    &::before{
+      display: none;
+    }
+  }
+  .guide__item {
+    row-gap: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .guide__img {
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,129 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 20px 0;
+  z-index: 999;
+  background-color: #ffffff;
+}
+
+.header__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__menu-btn {
+  display: none;
+}
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  /* border: 3px solid #fff; */
+}
+.menu-btn__burger {
+  width: 50px;
+  height: 3px;
+  background: #fcb72b;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background: #fcb72b;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger::before {
+  transform: translateY(-7px);
+}
+.menu-btn__burger::after {
+  transform: translateY(7px);
+}
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.header__box {
+  display: flex;
+  align-items: center;
+  column-gap: 60px;
+}
+
+.header__logo {
+  width: 110px;
+}
+
+.nav__list {
+  display: flex;
+  column-gap: 30px;
+}
+
+.nav__link {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 25px;
+  color: #939caa;
+  &:hover {
+    color: #fcb72b;
+  }
+}
+
+.header__btn {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  color: #ffffff;
+  background: #fcb72b;
+  padding: 15px 40px;
+  border: 1px solid #fcb72b;
+  &:hover {
+    border: 1px solid #fcb72b;
+    color: #fcb72b;
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header__menu-btn {
+    display: block;
+    left: 30px;
+    position: fixed;
+  }
+
+  .header__body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav {
+    display: none;
+  }
+  .header__btn {
+    display: none;
+  }
+}
